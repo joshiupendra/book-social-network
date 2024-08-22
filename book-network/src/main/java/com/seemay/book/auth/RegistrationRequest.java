@@ -1,33 +1,29 @@
 package com.seemay.book.auth;
 
 import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Getter
-@Setter
 @Builder
+@Data
 public class RegistrationRequest {
 
-    @NotEmpty(message = "Firstname is mandatory")
-    @NotBlank(message = "Firstname is mandatory")
+    @NotEmpty(message = "firstname should not be Empty")
+    @NotNull(message = "firstname should not be Null")
     private String firstname;
-
-    @NotEmpty(message = "Lastname is mandatory")
-    @NotBlank(message = "Lastname is mandatory")
+    @NotEmpty(message = "lastname should not be Empty")
+    @NotNull(message = "lastname should not be Null")
     private String lastname;
-
-    @Email(message = "Email is not formatted")
-    @NotEmpty(message = "Email is mandatory")
-    @NotBlank(message = "Email is mandatory")
+    @Email(message = "email is not well formatted")
+    @NotEmpty(message = "email should not be Empty")
+    @NotNull(message = "email should not be Null")
     private String email;
-
-    @NotEmpty(message = "Password is mandatory")
-    @NotBlank(message = "Password is mandatory")
-    @Size(min = 8, message = "Password should be 8 characters long minimum")
+    @NotEmpty(message = "password should not be Empty")
+    @NotNull(message = "password should not be Null")
+    @Size(min = 8, message = "password should be 8 characters long minimum")
     private String password;
 }
