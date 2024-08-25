@@ -30,7 +30,6 @@ export class LoginComponent implements OnInit {
       body: this.authRequest
     }).subscribe({
       next: (res:AuthenticationResponse): void => {
-        console.log(res);
         this.tokenService.token = res.token as string;
         this.router.navigate(["books"]);
       },
