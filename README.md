@@ -90,4 +90,4 @@ This project is licensed under the Apache License 2.0. See the [LICENSE](LICENSE
 To get started with the Book Social Network project, follow the setup instructions in the respective directories:
 
 - [Backend Setup Instructions](/book-network/README.md)
-- [Frontend Setup Instructions] (book-network-ui/README.md)
+- [Frontend Setup Instructions](book-network-ui/README.md)
