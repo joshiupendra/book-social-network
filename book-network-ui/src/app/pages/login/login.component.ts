@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthenticationRequest, AuthenticationResponse } from 'src/app/services/models';
-import { AuthenticationService } from 'src/app/services/services';
-import { TokenService } from 'src/app/services/token/token.service';
+import { AuthenticationRequest } from '../../services/models/authentication-request';
+import { AuthenticationService } from '../../services/services/authentication.service';
+import { TokenService } from '../../services/token/token.service';
+import { AuthenticationResponse } from '../../services/models/authentication-response';
 
 @Component({
   selector: 'app-login',
