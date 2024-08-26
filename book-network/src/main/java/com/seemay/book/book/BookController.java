@@ -24,7 +24,7 @@ public class BookController {
     }
 
     @GetMapping("{book-id}")
-    public ResponseEntity<BookResponse> findBookBiId(@PathVariable("book-id") Integer bookId) {
+    public ResponseEntity<BookResponse> findBookById(@PathVariable("book-id") Integer bookId) {
         return ResponseEntity.ok(bookService.findById(bookId));
     }
 

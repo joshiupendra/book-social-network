@@ -76,3 +76,4 @@ export class MyBooksComponent implements OnInit {
     this.router.navigate(["books", "manage", book.id]);
   }
 }
+ 
