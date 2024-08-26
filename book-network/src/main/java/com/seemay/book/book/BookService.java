@@ -148,7 +148,7 @@ public class BookService {
 
         final boolean isAlreadyBorrowed = bookTransactionHistoryRepository.isAlreadyBorrowedByUser(bookId, user.getId());
         if (isAlreadyBorrowed) {
-            throw new OperationNotPermittedException("You requested book is already borrowed");
+            throw new OperationNotPermittedException("The requested book is already borrowed");
         }
 
         BookTransactionHistory bookTransactionHistory = BookTransactionHistory.builder()
