@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { BookResponse } from '../../../../services/models';
 
 @Component({
@@ -41,15 +41,40 @@ export class BookCardComponent {
     this._manage = value;
   }
 
-  onShowDetails() {}
+  @Output()
+  private share: EventEmitter<BookResponse> = new EventEmitter<BookResponse>();
+  @Output()
+  private archive: EventEmitter<BookResponse> = new EventEmitter<BookResponse>();
+  @Output()
+  private addtoWaitingList: EventEmitter<BookResponse> = new EventEmitter<BookResponse>();
+  @Output()
+  private borrow: EventEmitter<BookResponse> = new EventEmitter<BookResponse>();
+  @Output()
+  private edit: EventEmitter<BookResponse> = new EventEmitter<BookResponse>();
+  @Output()
+  private details: EventEmitter<BookResponse> = new EventEmitter<BookResponse>();
 
-  onBorrow() {}
+  onShowDetails() {
+    this.details.emit(this._book);
+  }
 
-  onAddToWaitingList() {}
+  onBorrow() {
+    this.borrow.emit(this._book);
+  }
 
-  onEdit() {}
+  onAddToWaitingList() {
+    this.addtoWaitingList.emit(this._book);
+  }
 
-  onShare() {}
+  onEdit() {
+    this.edit.emit(this._book);
+  }
 
-  onArchive() {}
+  onShare() {
+    this.share.emit(this._book);
+  }
+
+  onArchive() {
+    this.archive.emit(this._book);
+  }
 }
