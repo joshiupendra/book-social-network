@@ -21,7 +21,7 @@ To set up the backend of the Book Social Network project, follow these steps:
 1. Clone the repository:
 
 ```bash
-   git clone https://github.com/ali-bouali/book-social-network.git
+   git clone https://github.com/joshiupendra/book-social-network.git
 ```
 
 2. Run the docker-compose file
@@ -51,6 +51,12 @@ To set up the backend of the Book Social Network project, follow these steps:
 5. Access the API documentation using Swagger UI:
 
 Open a web browser and go to `http://localhost:8088/swagger-ui/index.html.
+
+6. Create Docker Image of Backend run following command in book-network directory:
+
+```bash
+  docker build -t bsn/bsn:1.0.0 -f ../docker/backend/Dockerfile .
+```
 
 ## License
 
