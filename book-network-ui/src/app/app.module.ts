@@ -10,6 +10,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { CodeInputModule } from 'angular-code-input';
 import { ActivateAccountComponent } from './pages/activate-account/activate-account.component';
 import { HttpTokenInterceptor } from './services/interceptor/http-token.interceptor';
+import { ApiModule } from './services/api.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HttpTokenInterceptor } from './services/interceptor/http-token.intercep
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    CodeInputModule
+    CodeInputModule,
+    ApiModule.forRoot({rootUrl: 'http://localhost:8088/api/v1'})
   ],
   providers: [
     HttpClient,
